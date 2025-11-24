@@ -16,6 +16,21 @@ void Lab4Q1(), Lab4Q2();
 // Lab 6 Questions
 void Lab6Q1(), Lab6Q2(), Lab6Q3(), Lab6Q4(), Lab6Q5(), Lab6Q6(), Lab6Q7(), Lab6Q8();
 
+// Lab 7 Questions
+void Lab7Q1(), Lab7Q2(), Lab7Q3(), Lab7Q4();
+
+// Lab 7Q1 Max
+int max7Q1(int, int);
+// Lab 7Q2 Min
+int min7Q2(int, int);
+// Lab 7Q3 Multiply
+void printMultiply7Q3(int);
+/* Lab 7Q4 Calculator */
+int sum7Q4(int, int);
+int subtract7Q4(int, int);
+int multiply7Q4(int, int);
+int divide7Q4(int, int);
+
 int main() {
     int mainchoice;
 
@@ -122,16 +137,90 @@ void Lab6() {
         case 6: Lab6Q6(); break;
         case 7: Lab6Q7(); break;
         case 8: Lab6Q8(); break;
-        case 0: cout << "Exiting Looping Lab..." << endl; break;
+        case 0: cout << "Exiting Lab 6..." << endl; break;
         default: cout << "Invalid choice" << endl;
         }
     } while (choice != 0);
     cout << endl;
 }
 
-// ========================= Lab 7 & Lab 8 =========================
-void Lab7() { cout << "Ongoing" << endl; }
-void Lab8() { cout << "Ongoing" << endl; }
+// ========================= Lab 7 Choice =========================
+void Lab7() {
+    int choice;
+    do {
+        cout << "\nLab 7 Questions" << endl;
+        cout << "1. Question 1" << endl;
+        cout << "2. Question 2" << endl;
+        cout << "3. Question 3" << endl;
+        cout << "4. Question 4" << endl;
+        cout << "0. Exit" << endl;
+        cout << endl;
+        cout << "Choose (0-4): ";
+        cin >> choice;
+        cout << endl;
+
+        switch (choice) {
+        case 1: Lab7Q1(); break;
+        case 2: Lab7Q2(); break;
+        case 3: Lab7Q3(); break;
+        case 4: Lab7Q4(); break;
+        case 0: cout << "Exiting Lab 7 ..." << endl; break;
+        default: cout << "Invalid choice" << endl;
+        }
+    } while (choice != 0);
+    cout << endl;
+}
+
+// ========================= Lab 8 =========================
+void Lab8() {    cout << "Ongoing" << endl;}
+
+
+// ========================= Specific Function for question =========================
+
+int max7Q1(int num1, int num2) {
+    int large;
+    if (num1 > num2) {
+        large = num1;
+    }
+    else {
+        large = num2;
+    }
+    return large;
+}
+
+int min7Q2(int n1, int n2) {
+    if (n1 < n2) {
+        return n1;
+    }
+    else {
+        return n2;
+    }
+}
+
+void printMultiply7Q3(int num) {
+    for (int i = 1; i <= 12; i++) {
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+}
+
+int sum7Q4(int num1, int num2) {
+    return num1 + num2;
+}
+int subtract7Q4(int num1, int num2) {
+    return num1 - num2;
+}
+int multiply7Q4(int num1, int num2) {
+    return num1 * num2;
+}
+int divide7Q4(int num1, int num2) {
+    return num1 / num2;
+}
+
+
+// ------------------------------------------------------------------------------------------
+
+
+
 
 // ========================= Lab 3 Questions =========================
 void Lab3Q1() {
@@ -237,7 +326,7 @@ void Lab4Q2() {
     cout << "Status: " << status << endl;
 }
 
-// ========================= Lab 6 =========================
+// ========================= Lab 6 Questions =========================
 
 void Lab6Q1() {
 
@@ -355,4 +444,58 @@ void Lab6Q8() {
     }
 
     cout << endl;
+}
+
+void Lab7Q1() {
+    int num1, num2;
+    cout << "Enter a number:";
+    cin >> num1;
+    cout << "Enter a number:";
+    cin >> num2;
+    cout << max(num1, num2) << endl;
+}
+
+void Lab7Q2() {
+    int num1, num2;
+    cout << "Enter the first number:";
+    cin >> num1;
+    cout << "Enter the second number:";
+    cin >> num2;
+    cout << min(num1, num2) << " is the smallest" << endl;
+}
+
+void Lab7Q3() {
+    int num;
+    cout << "Enter a number:";
+    cin >> num;
+    printMultiply7Q3(num);
+}
+
+void Lab7Q4() {
+    int choice, num1, num2;
+    cout << "Enter num 1:";
+    cin >> num1;
+    cout << "Enter num 2:";
+    cin >> num2;
+    cout << "Tell me what do you want me to do" << endl;
+    cout << "---------------------------------" << endl;
+    cout << "1. Summation \n2. Subtraction \n3. Multiplication \n4. Division \n";
+
+    cout << "Enter:";
+    cin >> choice;
+    if (choice == 1) {
+        cout << num1 << " + " << num2 << " = " << sum7Q4(num1, num2) << endl;
+    }
+    else if (choice == 2) {
+        cout << num1 << " - " << num2 << " = " << subtract7Q4(num1, num2) << endl;
+    }
+    else if (choice == 3) {
+        cout << num1 << " x " << num2 << " = " << multiply7Q4(num1, num2) << endl;
+    }
+    else if (choice == 4) {
+        cout << num1 << " / " << num2 << " = " << divide7Q4(num1, num2) << endl;
+    }
+    else {
+        cout << "Invalid Choice!" << endl;
+    }
 }
