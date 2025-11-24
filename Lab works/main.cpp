@@ -242,9 +242,10 @@ void Lab4Q2() {
 void Lab6Q1() {
 
     cout << "[Exercise 6 - Question 1]" << endl;
-
-    for (int i = 0; i < 10; i++) {
+    int i = 0;
+    while (i < 10) {
         cout << "I love programming!" << endl;
+        i++;
     }
     cout << endl;
 }
